@@ -39,10 +39,10 @@ def main():
             last_data = last_file.read()
             buffer_data = buffer.read()
             if last_data == buffer_data:
-                print("there was no change")
+#                print("there was no change")
             else:
-                print("there was a change")
                 last_time = time.strftime("%H:%M:%S-%d_%m_%Y", time.localtime())
+                print("there was a change at ", last_time)
                 system("mv buffer.txt save_{}.txt".format(last_time))
 
 

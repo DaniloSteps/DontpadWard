@@ -9,7 +9,6 @@ def create_address(warded):
 
 def create_folder(warded):
     os.system('mkdir {}'.format(warded))
-    os.system('mv address.txt {}'.format(warded))
 
 
 def place_ward(warded):
@@ -17,6 +16,8 @@ def place_ward(warded):
 
     os.system('cp dontpadWard.py {}/{}'.format(path, warded))
     os.system('nohup python3 {}/{}/dontpadWard.py &'.format(path, warded))
+    
+    os.system('rm address.txt')
 
 
 def main():

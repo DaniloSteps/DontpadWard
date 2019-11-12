@@ -46,15 +46,22 @@ def main():
                 last_time = time.strftime(
                     "%H:%M:%S-%d_%m_%Y", time.localtime())
                 system('mv buffer.txt {}_{}.txt'.format(address, last_time))
-                log_file = open('log.txt', 'a+')
-                log_file.write(
-                    '\nhttp://dontpad.com/{} changed at {}.'.format(address, last_time))
-                log_file.close()
-            else:
-                log_file = open('log.txt', 'a+')
-                log_file.write(
-                    '\nNo changes on http://dontpad.com/{} at {}.'.format(address, last_time))
-                log_file.close()                
+            #     log_file = open('log.txt', 'a+')
+            #     log_file.write(
+            #         '\nhttp://dontpad.com/{} changed at {}.'.format(address, last_time))
+            #     log_file.close()
+            # else:
+            #     log_file = open('log.txt', 'a+')
+            #     log_file.write(
+            #         '\nNo changes on http://dontpad.com/{} at {}.'.format(address, last_time))
+            #     log_file.close()
+
+            log_time = time.strftime("%H:%M:%S-%d_%m_%Y", time.localtime())
+
+            log_file = open('log.txt', 'w+')
+            log_file.write(
+                'The last call to ward was at {}.'.format(log_time))
+            log_file.close()
 
         time.sleep(5)
 

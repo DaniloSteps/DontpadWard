@@ -21,8 +21,6 @@ def log(address, last_time):
 
 
 def main():
-    # print("Enter the dontpad domain you wish to ward:")
-    # warded = input("http://dontpad.com/")
 
     with open('address.txt') as warded:
         address = warded.read()

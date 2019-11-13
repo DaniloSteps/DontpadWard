@@ -17,7 +17,7 @@ def main():
     address.write(warded)
     address.close()
 
-    os.system('nohup python3 {}/.dontpadWard.py &'.format(os.getcwd()))
+    os.system('nohup python3 {}/.dontpadWard.py >{}/.nohup.out 2>&1 &'.format(os.getcwd(), os.getcwd()))
 
     sleep(1)
 

@@ -1,7 +1,6 @@
 # DontpadWard
-```
   _First of all thanks for @VGasparini and @lucianowayand, two more experienced programmers who did some codes that was the base for this program_ <3
-```
+  
 It's just a little code I did to monitor and register all changes made to a given _dontpad.com/_ URL.
 
 I wrote it on Linux, but _maybe_ it also runs on Windows, if that's not the case feel free to read and modify the code :)

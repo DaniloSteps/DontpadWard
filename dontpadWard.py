@@ -13,11 +13,11 @@ def access_dontpad(dontpad):
     buffer.close()
 
 
-def log(address, last_time):
-    log_file = open('log.txt', 'a+')
-    log_file.write(
-        '\nhttp://dontpad.com/{} changed at {}.'.format(address, last_time))
-    log_file.close()
+# def log(address, last_time):
+#     log_file = open('log.txt', 'a+')
+#     log_file.write(
+#         '\nhttp://dontpad.com/{} changed at {}.'.format(address, last_time))
+#     log_file.close()
 
 
 def main():

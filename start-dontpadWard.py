@@ -1,34 +1,23 @@
 import os
 
 
-def create_address(warded):
-    address = open('address.txt', 'w+')
-    address.write(warded)
-    address.close()
-
-
-def create_folder(warded):
-    os.system('mkdir {}'.format(warded))
-
-
-def place_ward(warded):
-    path = os.path.dirname(os.path.abspath(__file__))
-
-    os.system('cp dontpadWard.py {}/{}'.format(path, warded))
-    os.system('nohup python3 {}/{}/dontpadWard.py &'.format(path, warded))
-    
-    os.system('rm address.txt')
-
-
 def main():
     print("Enter the dontpad domain you wish to ward:")
     warded = input("http://dontpad.com/")
 
-    create_address(warded)
+    os.system('mkdir {}'.format(warded))
 
-    create_folder(warded)
+    os.system('cp dontpadWard.py {}'.format(warded))
 
-    place_ward(warded)
+    os.chdir(warded)
+
+    address = open('address.txt', 'w+')
+    address.write(warded)
+    address.close()
+
+    os.system('nohup python3 {}/dontpadWard.py &'.format(os.getcwd()))
+
+    os.system('rm address.txt')
 
 
 main()

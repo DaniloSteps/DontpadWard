@@ -61,7 +61,7 @@ def main():
                 'The last call to ward was at {}.'.format(log_time))
             log_file.close()
 
-        time.sleep(5)
+        time.sleep(10)
 
 
 main()

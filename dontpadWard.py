@@ -8,7 +8,7 @@ def access_dontpad(dontpad):
     link = requests.get(dontpad)
     soup = BeautifulSoup(link.text, 'html.parser')
     text = soup.find('textarea').get_text()
-    buffer = open('buffer.txt', 'w+')
+    buffer = open('.buffer.txt', 'w+')
     buffer.write(text)
     buffer.close()
 
@@ -27,7 +27,7 @@ def main():
 
     access_dontpad("http://dontpad.com/{}/".format(address))
     last_time = time.strftime("%H:%M:%S-%d_%m_%Y", time.localtime())
-    system('mv buffer.txt {}_{}.txt'.format(address, last_time))
+    system('mv .buffer.txt {}_{}.txt'.format(address, last_time))
 
     log_file = open('log.txt', 'w+')
     log_file.write(
@@ -37,13 +37,13 @@ def main():
     while (1):
         access_dontpad("http://dontpad.com/{}/".format(address))
 
-        with open('{}_{}.txt'.format(address, last_time)) as last_file, open('buffer.txt') as buffer:
+        with open('{}_{}.txt'.format(address, last_time)) as last_file, open('.buffer.txt') as buffer:
             last_data = last_file.read()
             buffer_data = buffer.read()
             if last_data != buffer_data:
                 last_time = time.strftime(
                     "%H:%M:%S-%d_%m_%Y", time.localtime())
-                system('mv buffer.txt {}_{}.txt'.format(address, last_time))
+                system('mv .buffer.txt {}_{}.txt'.format(address, last_time))
             #     log_file = open('log.txt', 'a+')
             #     log_file.write(
             #         '\nhttp://dontpad.com/{} changed at {}.'.format(address, last_time))

@@ -1,5 +1,5 @@
 import os
-
+from time import sleep
 
 def main():
     print("Enter the dontpad domain you wish to ward:")
@@ -11,11 +11,15 @@ def main():
 
     os.chdir(warded)
 
+    os.system('mv dontpadWard.py .dontpadWard.py')
+
     address = open('address.txt', 'w+')
     address.write(warded)
     address.close()
 
-    os.system('nohup python3 {}/dontpadWard.py &'.format(os.getcwd()))
+    os.system('nohup python3 {}/.dontpadWard.py &'.format(os.getcwd()))
+
+    sleep(1)
 
     os.system('rm address.txt')
 

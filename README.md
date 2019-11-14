@@ -23,7 +23,7 @@ time
 
 Execute the ```place-a-ward.py``` script:
 ```
-Python3 place-a-ward.py
+python3 place-a-ward.py
 ```
 Then just type the _dontpad.com/_ URL you wish to ward and press _Enter_.
 

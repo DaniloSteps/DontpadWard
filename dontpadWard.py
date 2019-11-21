@@ -26,7 +26,7 @@ def main():
         address = warded.read()
 
     access_dontpad("http://dontpad.com/{}/".format(address))
-    last_time = time.strftime("%H:%M:%S-%d_%m_%Y", time.localtime())
+    last_time = time.strftime("%d_%m_%Y-%H:%M:%S", time.localtime())
     system('mv .buffer.txt {}_{}.txt'.format(address, last_time))
 
     log_file = open('log.txt', 'w+')
@@ -42,7 +42,7 @@ def main():
             buffer_data = buffer.read()
             if last_data != buffer_data:
                 last_time = time.strftime(
-                    "%H:%M:%S-%d_%m_%Y", time.localtime())
+                    "%d_%m_%Y-%H:%M:%S", time.localtime())
                 system('mv .buffer.txt {}_{}.txt'.format(address, last_time))
             #     log_file = open('log.txt', 'a+')
             #     log_file.write(
@@ -54,7 +54,7 @@ def main():
             #         '\nNo changes on http://dontpad.com/{} at {}.'.format(address, last_time))
             #     log_file.close()
 
-            log_time = time.strftime("%H:%M:%S-%d_%m_%Y", time.localtime())
+            log_time = time.strftime("%d_%m_%Y-%H:%M:%S", time.localtime())
 
             log_file = open('log.txt', 'w+')
             log_file.write(

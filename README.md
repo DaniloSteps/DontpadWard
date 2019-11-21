@@ -32,7 +32,7 @@ Then just type the _dontpad.com/_ URL you wish to ward and press _Enter_.
 
 In resume the script ```place-a-ward.py``` creates a folder and place a copy of ```dontpadWard.py``` with a temporary text file containing the URL you entered. Then the script set ```dontpadWard.py``` to run on the background of the system with _**nohup_.
 
-While ```dontpadWard.py``` is running on the background, it will write the last time a access on the _dontpad.com/_ URL as performed and if a change was registered it will create a new file named " \[URL]\_\[TIME-DATE].txt" where "URL" is the _dontpad.com/_ you warded and "TIME-DATE" is the time and date of when a change on the page was registered.
+While ```dontpadWard.py``` is running on the background, it will write the last time a access on the _dontpad.com/_ URL as performed and if a change was registered it will create a new file named " \[URL]\_\[DATE-TIME].txt" where "URL" is the _dontpad.com/_ you warded and "DATE-TIME" is the time and date of when a change on the page was registered.
 
   **sorry, but for now, the only way to kill the program is through the system monitor, I might change it later.
   
